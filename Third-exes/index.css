@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vh;
+    background: #111;
+}
+
+.container {
+    position: relative;
+    margin-top: 150px;
+    width: 800px;
+    height: 500px;
+    background: #222;
+}
+
+.container .clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.container .clip.clip1 {
+    background: url(https://nationalzoo.si.edu/sites/default/files/styles/1400_scale/public/animals/sumatrantiger-003.jpg?itok=tGRzAYca);
+    background-size: cover;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 55% 0, 20% 100%, 0% 100%);
+}
+
+.container .clip.clip2 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: url(https://www.krugerpark.co.za/images/black-maned-lion-shem-compion-786x500.jpg);
+    clip-path: polygon(55% 0, 100% 0, 45% 100%, 20% 100%);
+}
+
+
+.container .clip.clip3 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: url(https://a-z-animals.com/media/2021/10/shutterstock_91045121.jpg);
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 45% 100%);
+}
+.container:hover .clip {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    transition: 0.5s;
+}
+.container .clip:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition: 0.5s;
+}
+
+.container .clip .content{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 70%;
+    padding: 20px;
+    background: #fff;
+    opacity: 0;
+    transform: 0.5s;
+}
+.container .clip:hover .content{
+    bottom: 0;
+    opacity: 1;
+    transition: 0.4s;
+}
